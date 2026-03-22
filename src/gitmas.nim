@@ -41,7 +41,7 @@ proc gitInit(addStruc: bool) =
 
 proc showHelp() =
   let ver = execProcess("dpkg-query -W -f='${Version}\n' gitmas")
-  echo "- Gitmas " & ver & " - By Jordan"
+  echo "- Gitmas " & ver & "- By Jordan"
   echo "- Do not type grinch, or else..."
   echo ""
   

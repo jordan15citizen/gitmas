@@ -4,10 +4,10 @@ Architecture: aarch64
 Maintainer: Jordan
 Installed-Size: 140
 Filename: ./gitmas_1.15.9_aarch64.deb
-Size: 43388
-MD5sum: 06c05e21d675b9bbda9c04edf97e669c
-SHA1: e6e06ce129f5ad25806fbe1980643e5349205c7e
-SHA256: 650287b961e124aaff98dfb10705ce7c787cdcebf9e0248c9ba5a043a0d2295f
+Size: 43344
+MD5sum: 09231879103a7ca2ccc28e1ae67a8ae4
+SHA1: 632da72aca4ff94704bd9c086b6e5559248eab97
+SHA256: b58f162a24cf7e3c4d70967e002fc1eb93fe7b665370b715eaf48e7c1df3532a
 Homepage: https://jordan15citizen.github.io
 Description: Easy Git shortcuts and more
 

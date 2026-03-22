@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
+VERSION=$(grep '"version":' manifest.json | cut -d '"' -f 4)
 G='\033[0;92m'
 NC='\033[0m'
 msg() { printf "${G}==>${NC} $*\n"; }
@@ -20,7 +21,7 @@ nim c -d:release --app:lib --out:lib/libgitsetup.so lib/git_setup.nim
 strip lib/libgitsetup.so
 
 # 3. Build Debian Package
-msg "Packaging ..."
+msg "Packaging $VERSION..."
 termux-create-package manifest.json
 mv *.deb termux/packages/
 
@@ -41,8 +42,6 @@ cd ../..
 
 # 6. Deployment
 msg "Pushing to GitHub..."
-git add .
-git commit -m "$1"
-git push origin main
+gitmas push "$1"
 
-msg "${G}v1.15.4 is Live and Signed.${NC}"
+msg "${G}$VERSION is Live and Signed!${NC}"
