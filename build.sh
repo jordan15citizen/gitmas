@@ -20,7 +20,7 @@ nim c -d:release --app:lib --out:lib/libgitsetup.so lib/git_setup.nim
 strip lib/libgitsetup.so
 
 # 3. Build Debian Package
-msg "Packaging v1.15.4..."
+msg "Packaging ..."
 termux-create-package manifest.json
 mv *.deb termux/packages/
 

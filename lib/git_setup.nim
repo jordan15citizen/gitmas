@@ -26,5 +26,3 @@ proc doSetup*() {.exportc, dynlib.} =
     styledWriteLine(stdout, fgRed, "Setup cancelled: Token cannot be empty.", resetStyle)
     quit(1)
 
-if isMainModule:
-  doSetup()
