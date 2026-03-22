@@ -30,10 +30,10 @@ cd termux/packages
 dpkg-scanpackages . /dev/null > Packages
 gzip -9c Packages > Packages.gz
 
-# 5. Signing (Using your GPG Loopback logic)
+# 5. Signing (Using GPG Key)
 msg "Generating Release & Signing..."
 # If you don't have apt-ftparchive, a simple 'ls' based Release file works too
-apt-ftparchive release . > Release
+apt-ftparchive -c ../apt.conf release . > Release
 
 gpg --batch --yes --pinentry-mode loopback --passphrase "" --clearsign -o InRelease Release
 gpg --batch --yes --pinentry-mode loopback --passphrase "" -abs -o Release.gpg Release

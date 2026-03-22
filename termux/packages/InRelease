@@ -1,34 +1,41 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-Date: Sun, 22 Mar 2026 13:04:12 +0000
+Architectures: aarch64
+Codename: packages
+Components: main
+Date: Sun, 22 Mar 2026 13:08:42 +0000
+Description: Jordan's Custom Micro-Utils
+Label: Gitmas
+Origin: Gitmas-Repo
+Suite: termux
 MD5Sum:
- 25f35df9f929b80815c83b31dc871aea              390 Packages
- e9932a30205eb3b67215353104b8d824              315 Packages.gz
- c566ecca4941f54087db69ebdf0be86b               38 Release
+ 7f8f19c07c740d2663f8e7ba324558a2              390 Packages
+ 9e6499066f8d8644650787e6bdc0534c              315 Packages.gz
+ 865e1aee27fb50a298024ee564bed529              186 Release
 SHA1:
- a3ca4b4de6124acc277e43647c938036144cc327              390 Packages
- 4c07ef317a266dcacdae0b71d2cd6bb200ad652e              315 Packages.gz
- 9489f63a5b270aa4ee18537c3b641b08b69b37a4               38 Release
+ 4a1c6a5783d6aaccfcab13ca152ba994d572c12c              390 Packages
+ a45604017fa682f0546e8e40b76a1ca1a4d38a01              315 Packages.gz
+ cd7365a74300cddfe9d268a51f9e12c73f158005              186 Release
 SHA256:
- b78553e2dbd5de39f4da02e30af8a75cb3e91a4a5e02facef8148dfe58681460              390 Packages
- 1649c8765656ba7a49b40f22ce6d6dd41b17578c19d7be405810cc4feebfd67c              315 Packages.gz
- 76c15380e549e4f5f76ae4b189d2af52f06919b943178eacab18d0d3fba0e94d               38 Release
+ aba50823ea22461021cd0e2b96e3e877c3eb4ffa1a8923eb1f8de867e84c0b9c              390 Packages
+ bcb981402a1d2820168b058df14a7b2ff7bc13a3d6a4d7554054d91748742408              315 Packages.gz
+ 4a3bcdd06e58ff5e00a45d3dd4a66a3350909f6943b4a2d20648cf895d475aab              186 Release
 SHA512:
- e2734a128d3d5166ec60bc71488787bd50cbeab8e8b155baf42b2ac711509da7f237c92f9d9b55200229027ffd78a9f31a2c82532f9b8bdd9b0394dd13db5397              390 Packages
- 0f7f313cdeb82d4f07dcb368501c9365d3b6f1ee4a6f55440a67f6c146bd811257bc7f1e8defe1b07d7e80b216b33f4f0133ee2e94b0fcd96fc0291a49689eaa              315 Packages.gz
- 3d9791d9a5baf01ebd56d616f40de5e7530cd40a6b1db021889f65fe1007661c97cd43131eb189c79ee93eda8bfca6cadfda46ffeb1a6e52f00a0d34672e540a               38 Release
+ 8d589f41b21ffff8050ee2e2158c94db091bf6de535c8932af1a94a3a3f339ea015789275705a3a4be3df8e76eefa15bd1c472fce4a741f5a7bbfaed82c110eb              390 Packages
+ b977db66e1f6ae7edf12a9e14a448683a9a75a982e6d671d91fff63c39694cddb6cc2cb3fbae89b2bb7a917f99095029dfbed55a7b762dc76e909c9a97296099              315 Packages.gz
+ e1d78571fbe6f0a06d895d90ee53fb4f45c20182f31cab2e87c0c911ba437d170ac50779a23b6102bce1493f1288ce8d29d7102df2f29e0eebb427172f1db33e              186 Release
 -----BEGIN PGP SIGNATURE-----
 
-iQHPBAEBCAA5FiEE6TuV1zwwgrtwFyms6yqw4wDHSv4FAmm/6MwbFIAAAAAABAAO
-bWFudTIsMi41KzEuMTEsMywyAAoJEOsqsOMAx0r+sssL/30Oxs12NT/e6ymD/P2t
-JjzWiGBFQirL/wvOXHRkvbYMaMHGyCuTlYrOwbqMmgUK4P5SJqQ/XAQqh7ZWkGrS
-lG4SBo7KEa3D61ghjtENzwJo6U5QXSA/OF3Lqgtne2KtkbvmK4CEYNrJMcE9m4ti
-VFQFP7yvUdOBSHoOo+q0a5Qq0BTXE5E3lkWE/rJ0X1kiYEqJAePxVU6+f9iDNbs4
-y6qu4UfDlQjk2/OJLl7+DdaYUikeJTiSB73NRQQWucUCeEAKzXpXGOWn6D6/0qVc
-Hm0Zy1PkoHvxjE2BtUKqBpyE492aX/gQYsUbia+wVZt4IU+8Nixeq42Ns5pk6M2O
-OSbny7WbtW9pNVFw1bIu1Q+LTjaAuQtxXrg0OVFnoDMQpUyn1FK5iZaX7tcg7tiK
-dfkawF9+56MfmrJ1/pLggUNpwbExluBITw8u8y+82iLuOfceC8ZLtiOq+CN+gQ0Q
-C3Pys4pcLdChcuDYt3BngbnEMEQY+hdg1siLGLOflLif/w==
-=HEui
+iQHPBAEBCAA5FiEE6TuV1zwwgrtwFyms6yqw4wDHSv4FAmm/6dobFIAAAAAABAAO
+bWFudTIsMi41KzEuMTEsMywyAAoJEOsqsOMAx0r+eJ4L/3G808HmYeVs630YZfDn
+qVB10UBpUxHCBp0+BXz7dq34+Ms+VUIts14kyO7ixZVKx9V/9IMW6xjwnBMXlD8M
+RS/9C8iQHEYkMgNCqZl073l5JozwamT55hb9i8BBsmeSxgJWNaISqf/HcMB8iPkI
+fjO/kPShrtFmAbwor75vBV4H+PvhTDcTj1HW98ZhqzCmhTb5wiL7Nog/lx5Yrc64
+qrpNLlorcYkFHq9B+PuORyqo3I4eQTin0UBvU/xna+dS1ylVdATtwdjx7ypGNhn+
+gEr0XopyVNXspufH2stX1HLKdBFppB8C9sbm5MlJPSY5yeRE7nZtJpNaLmp2zziK
+ctDn79uKU1AEXebH0ksGveqOGZGMHlG82J1eLgspACrnhQ+goGxhg8JqZ+mi5msf
+oKqC3cZvA2Cc92b8p0AtXxwn8nINgrNt726UvcorXFWGhleav/VcZ6CvHuugyVf4
+U2xxkZMvt50e5/nrus846ACqW9aVrJor5klw+UxY23bo7A==
+=2bth
 -----END PGP SIGNATURE-----
