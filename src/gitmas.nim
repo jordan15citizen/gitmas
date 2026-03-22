@@ -3,9 +3,10 @@ import std/osproc
 import std/strutils
 
 const libPath = "/data/data/com.termux/files/usr/lib/libgitmas.so"
-var YLW {.importc, dynlib: libPath.}: string
-var RST {.importc, dynlib: libPath.}: string
-var RED {.importc, dynlib: libPath.}: string
+var YLW {.importc: "YLW", dynlib: libPath.}: string
+var RST {.importc: "RST", dynlib: libPath.}: string
+var RED {.importc: "RED", dynlib: libPath.}: string
+
 
 let ver = execProcess("dpkg-query -W -f='${Version}\n' gitmas").strip()
 
