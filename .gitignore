@@ -1,0 +1,19 @@
+# Nim compiler outputs
+nimcache/
+*.pcm
+*.pdb
+*.swp
+
+# The actual binaries
+gitmas
+gitmas.exe
+build.sh
+
+# Debian packaging waste
+*-pkg/
+*.deb
+manifest.json
+
+# OS specific
+.DS_Store
+
