@@ -29,12 +29,6 @@ proc gitPush(commitMsg: string) =
 proc hasAuth(): bool {.importc, dynlib: libPath.}
 proc doSetup() {.importc, dynlib: libPath.}
 
-if not hasAuth():
-  echo "No credentials found."
-  doSetup()
-else:
-  echo "Authenticated via git-setup"
-
 proc gitInit(addStruc: bool) =
   echo "- Initializing git..."
   discard execCmd("git init")
@@ -47,7 +41,7 @@ proc gitInit(addStruc: bool) =
 
 proc showHelp() =
   let ver = execProcess("dpkg-query -W -f='${Version}\n' gitmas")
-  echo "- Gitmas " & $ver & "- By Jordan"
+  echo "- Gitmas " & ver & " - By Jordan"
   echo "- Do not type grinch, or else..."
   echo ""
   
@@ -67,9 +61,12 @@ proc showHelp() =
   echo "update:"
   echo "- If APT updating won't work, try this."
   echo ""
+
+  echo "setup-auth:"
+  echo "- Setup git user data"
   
 proc showSystemInfo() =
-  let androidVer =   getAndroidProp("ro.build.version.release")
+  let androidVer = getAndroidProp("ro.build.version.release")
   let androidSDK = getAndroidProp("ro.build.version.sdk")
   let deviceModel = getAndroidProp("ro.product.model")
   let sysABI = getAndroidProp("ro.product.cpu.abi")
@@ -88,53 +85,60 @@ let args = commandLineParams()
 
 if args.len == 0:
   warn "no command given."
-  warn"redirecting to help."
+  warn "redirecting to help."
   echo ""
   showHelp()
   quit(0)
 
-if args.len > 0:
-  let command = args[0]
+let command = args[0]
 
-  case command
-    of "sys-info":
-      showSystemInfo()
-      
-    of "init":
-      if args.len > 1:
+case command
+  of "sys-info":
+    showSystemInfo()
+    
+  of "init":
+    if args.len > 1:
+      try:
         let shouldAdd = parseBool(args[1]) 
         gitInit(shouldAdd)
-      else:
-        error "'init' needs a 'true' or 'false' argument."
-      
-    of "push":
-      if args.len > 1:
-        let argMsg = args[1]
-        if args[1].isEmptyOrWhitespace():
-          error "commit message cannot be empty or whitespace!"
-        else:
-          gitPush(argMsg)
-      else:
-        error "commit message not given!"  
-
-    of "help":
-     if args.len >= 1:
-       showHelp()
-
-    of "grinch":
-      error "YOU DARE TRY IT?"
-      error "Yeah you did, so now nothing will happen."
-      echo "- Grinch go kaboom!"
-      quit(1)
-
-    of "update":
-      echo YLW & "--- Force Refreshing Repo ---" & RST
-      discard execCmd("rm -f $PREFIX/var/lib/apt/lists/jordan15citizen*")
-      discard execCmd("apt clean")
-      discard execCmd("apt update")
-      echo "\n" & YLW & "System is now synced with v1.15.3 logic." & RST
-
+      except ValueError:
+        error "argument must be 'true' or 'false'."
     else:
+      error "'init' needs a 'true' or 'false' argument."
     
-      error "invalid command " & command
-      echo "Try 'init', 'push' or 'help'."
+  of "push":
+    if args.len > 1:
+      let argMsg = args[1]
+      if argMsg.isEmptyOrWhitespace():
+        error "commit message cannot be empty or whitespace!"
+      else:
+        gitPush(argMsg)
+    else:
+      error "commit message not given!"  
+
+  of "help":
+    showHelp()
+
+  of "grinch":
+    error "YOU DARE TRY IT?"
+    error "Yeah you did, so now nothing will happen."
+    echo "- Grinch go kaboom!"
+    quit(1)
+
+  of "update":
+    echo YLW & "--- Force Refreshing Repo ---" & RST
+    discard execCmd("rm -f $PREFIX/var/lib/apt/lists/jordan15citizen*")
+    discard execCmd("apt clean")
+    discard execCmd("apt update")
+    echo "\n" & YLW & "System is now synced with v1.15.3 logic." & RST
+
+  of "setup-auth":
+    if not hasAuth():
+      echo "No credentials found."
+      doSetup()
+    else:
+      echo "Credentials already established."
+    
+  else:
+    error "invalid command " & command
+    echo "Try 'init', 'push', 'sys-info', 'update', 'setup-auth' or 'help'."
