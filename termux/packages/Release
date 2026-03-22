@@ -1,0 +1,7 @@
+Origin: Gitmas-Repo
+Label: Gitmas
+Suite: termux
+Codename: packages
+Architectures: aarch64
+Components: main
+Description: Gitmas is written in Nim from a beginner
