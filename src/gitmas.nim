@@ -6,6 +6,7 @@ import std/terminal
 const YLW = ansiStyleCode(styleBright) & ansiForegroundColorCode(fgYellow)
 const RST = ansiResetCode
 const RED = ansiStyleCode(styleBright) & ansiForegroundColorCode(fgRed)
+const libPath = "/data/data/com.termux/files/usr/lib/libgitsetup.so"
 
 proc sys_prop_get(key: cstring, value: cstring): int32 
   {.importc: "__system_property_get", header: "<sys/system_properties.h>".}
@@ -25,6 +26,15 @@ proc gitPush(commitMsg: string) =
   echo "- Pushing..."
   discard execCmd("git push origin main")
 
+proc hasAuth(): bool {.importc, dynlib: libPath.}
+proc doSetup() {.importc, dynlib: libPath.}
+
+if not hasAuth():
+  echo "No credentials found."
+  doSetup()
+else:
+  echo "Authenticated via git-setup"
+
 proc gitInit(addStruc: bool) =
   echo "- Initializing git..."
   discard execCmd("git init")
@@ -37,7 +47,7 @@ proc gitInit(addStruc: bool) =
 
 proc showHelp() =
   let ver = execProcess("dpkg-query -W -f='${Version}\n' gitmas")
-  echo "- Gitmas" & $ver & "by Jordan"
+  echo "- Gitmas " & $ver & "- By Jordan"
   echo "- Do not type grinch, or else..."
   echo ""
   
