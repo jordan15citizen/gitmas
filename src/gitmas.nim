@@ -36,7 +36,8 @@ proc gitInit(addStruc: bool) =
     echo "- Not adding file structure."
 
 proc showHelp() =
-  echo "- Gitmas by Jordan"
+  let ver = execCmd("dpkg-query -W -f='${Version}\n' gitmas")
+  echo "- Gitmas" & ver & "by Jordan"
   echo "- Do not type grinch, or else..."
   echo ""
   
@@ -52,7 +53,7 @@ proc showHelp() =
   echo "sys-info:"
   echo "- Get system information."
   echo ""
-
+  
 proc showSystemInfo() =
   let androidVer =   getAndroidProp("ro.build.version.release")
   let androidSDK = getAndroidProp("ro.build.version.sdk")
