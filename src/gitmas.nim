@@ -1,7 +1,6 @@
 import std/os
 import std/osproc
 import std/strutils
-import std/terminal
 
 const libPath = "/data/data/com.termux/files/usr/lib/libgitmas.so"
 var YLW {.importc, dynlib: libPath.}: string
