@@ -1,3 +1,4 @@
+rm termux/packages/*.deb
 echo "- Building debian package..."
 nim -d:release --opt:size c src/gitmas.nim
 strip src/gitmas
