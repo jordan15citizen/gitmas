@@ -1,6 +1,6 @@
 {
   "name": "gitmas",
-  "version": "1.16.5",
+  "version": "1.16.6",
   "arch": "aarch64",
   "maintainer": "Jordan",
   "description": "Easy Git shortcuts and more",
