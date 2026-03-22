@@ -1,5 +1,6 @@
 echo "- Building debian package..."
 nim -d:release --opt:size c src/gitmas.nim
+strip src/gitmas
 termux-create-package manifest.json
 echo "- Moving debian package to termux/packagrs..."
 mv ./*.deb termux/packages
