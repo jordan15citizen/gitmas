@@ -1,16 +1,48 @@
-rm -rf termux/packages/*.deb
-rm -rf lib/*.so
-echo "- Building debian package..."
-nim -d:release --opt:size c src/gitmas.nim
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+G='\033[0;92m'
+NC='\033[0m'
+msg() { printf "${G}==>${NC} $*\n"; }
+
+# 1. Prep Workspace
+msg "Cleaning old builds..."
+rm -f *.deb termux/packages/*.deb
+
+# 2. Compile Nim Components
+msg "Compiling Gitmas and Shared Library..."
+# Build the main binary
+nim c -d:release --opt:size -o:src/gitmas src/gitmas.nim
 strip src/gitmas
-cd lib
-nim c -d:release --app:lib --out:libgitsetup.so git_setup.nim
-cd ..
+
+# Build the shared library (The Auth/Sign Brain)
+# We ensure it goes into the lib folder for the manifest to grab
+nim c -d:release --app:lib --out:lib/libgitsetup.so lib/git_setup.nim
+strip lib/libgitsetup.so
+
+# 3. Build Debian Package
+msg "Packaging v1.15.4..."
 termux-create-package manifest.json
-echo "- Moving debian package to termux/packagrs..."
-mv ./*.deb termux/packages
+mv *.deb termux/packages/
+
+# 4. Repo Indexing
+msg "Updating Repo Index..."
 cd termux/packages
 dpkg-scanpackages . /dev/null > Packages
 gzip -9c Packages > Packages.gz
-echo "- Publishing to GitHub..."
-gitmas push "$1"
+
+# 5. Signing (Using your GPG Loopback logic)
+msg "Generating Release & Signing..."
+# If you don't have apt-ftparchive, a simple 'ls' based Release file works too
+apt-ftparchive release . > Release
+
+gpg --batch --yes --pinentry-mode loopback --passphrase "" --clearsign -o InRelease Release
+gpg --batch --yes --pinentry-mode loopback --passphrase "" -abs -o Release.gpg Release
+cd ../.. 
+
+# 6. Deployment
+msg "Pushing to GitHub..."
+git add .
+git commit -m "$1"
+git push origin main
+
+msg "${G}v1.15.4 is Live and Signed.${NC}"
