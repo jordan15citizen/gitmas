@@ -35,7 +35,7 @@ proc gitInit(addStruc: bool) =
   else:
     echo "- Not adding file structure."
 
-proc showHelp(ver: int) =
+proc showHelp() =
   let ver = execCmd("dpkg-query -W -f='${Version}\n' gitmas")
   echo "- Gitmas" & $ver & "by Jordan"
   echo "- Do not type grinch, or else..."
