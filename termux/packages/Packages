@@ -1,0 +1,13 @@
+Package: gitmas
+Version: 1.0.0
+Architecture: aarch64
+Maintainer: Jordan
+Installed-Size: 73
+Filename: ./gitmas_1.0.0_aarch64.deb
+Size: 24804
+MD5sum: da0916fc1b6b65b68fba1f51bbbf1e09
+SHA1: 04a5656595f259be6e3500c5d637e17070896180
+SHA256: 35e933d1003c68cbe3c56b686219112deb2b3bdc1dd0a197cb81044f6c2c68e8
+Homepage: https://jordan15citizen.github.io
+Description: Easy Git shortcuts and more
+
