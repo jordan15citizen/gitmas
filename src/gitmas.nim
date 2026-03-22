@@ -63,6 +63,10 @@ proc showHelp() =
   echo "sys-info:"
   echo "- Get system information."
   echo ""
+
+  echo "update:"
+  echo "- If APT updating won't work, try this."
+  echo ""
   
 proc showSystemInfo() =
   let androidVer =   getAndroidProp("ro.build.version.release")
@@ -122,7 +126,14 @@ if args.len > 0:
       error "Yeah you did, so now nothing will happen."
       echo "- Grinch go kaboom!"
       quit(1)
-       
+
+    of "update":
+      echo YLW & "--- Force Refreshing Repo ---" & RST
+      discard execCmd("rm -f $PREFIX/var/lib/apt/lists/jordan15citizen*")
+      discard execCmd("apt clean")
+      discard execCmd("apt update")
+      echo "\n" & YLW & "System is now synced with v1.15.3 logic." & RST
+
     else:
     
       error "invalid command " & command
