@@ -17,8 +17,8 @@ strip src/gitmas
 
 # Build the shared library (The Auth/Sign Brain)
 # We ensure it goes into the lib folder for the manifest to grab
-nim c -d:release --app:lib --out:lib/libgitsetup.so lib/git_setup.nim
-strip lib/libgitsetup.so
+nim c -d:release --app:lib --out:lib/libgitmas.so lib/gitmaslib.nim
+strip lib/libgitmas.so
 
 # 3. Build Debian Package
 msg "Packaging $VERSION..."

@@ -1,12 +1,12 @@
 {
   "name": "gitmas",
-  "version": "1.15.9",
+  "version": "1.16.4",
   "arch": "aarch64",
   "maintainer": "Jordan",
   "description": "Easy Git shortcuts and more",
   "homepage": "https://jordan15citizen.github.io",
   "files": {
     "./src/gitmas": "bin/gitmas",
-    "./lib/libgitsetup.so": "lib/libgitsetup.so"
+    "./lib/libgitmas.so": "lib/libgitmas.so"
   }
 }

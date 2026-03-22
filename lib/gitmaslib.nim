@@ -1,6 +1,15 @@
 import os, std/terminal, strutils
 
 const tokenPath = "/data/data/com.termux/files/home/.gitmas_token"
+const YLW* {.exportc.} = ansiStyleCode(styleBright) & ansiForegroundColorCode(fgYellow)
+const RST* {.exportc.} = ansiResetCode
+const RED* {.exportc.} = ansiStyleCode(styleBright) & ansiForegroundColorCode(fgRed)
+
+proc warn*(msgWarn: string) {.exportc, dynlib.} =
+  echo YLW & "warning: " & RST & msgWarn
+
+proc error*(msgErr: string) {.exportc, dynlib.} =
+  echo RED & "error: " & RST & msgErr
 
 proc hasAuth*(): bool {.exportc, dynlib.} =
   return fileExists(tokenPath)

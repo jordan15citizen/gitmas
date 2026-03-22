@@ -3,10 +3,12 @@ import std/osproc
 import std/strutils
 import std/terminal
 
-const YLW = ansiStyleCode(styleBright) & ansiForegroundColorCode(fgYellow)
-const RST = ansiResetCode
-const RED = ansiStyleCode(styleBright) & ansiForegroundColorCode(fgRed)
-const libPath = "/data/data/com.termux/files/usr/lib/libgitsetup.so"
+const libPath = "/data/data/com.termux/files/usr/lib/libgitmas.so"
+var YLW {.importc, dynlib: libPath.}: string
+var RST {.importc, dynlib: libPath.}: string
+var RED {.importc, dynlib: libPath.}: string
+
+let ver = execProcess("dpkg-query -W -f='${Version}\n' gitmas").strip()
 
 proc sys_prop_get(key: cstring, value: cstring): int32 
   {.importc: "__system_property_get", header: "<sys/system_properties.h>".}
@@ -27,6 +29,10 @@ proc gitPush(commitMsg: string) =
   discard execCmd("git push origin main")
 
 proc hasAuth(): bool {.importc, dynlib: libPath.}
+
+proc error(msgErr: string) {.importc, dynlib: libPath}
+proc warn(msgWarn: string) {.importc, dynlib: libPath}
+
 proc doSetup() {.importc, dynlib: libPath.}
 
 proc gitInit(addStruc: bool) =
@@ -40,7 +46,6 @@ proc gitInit(addStruc: bool) =
     echo "- Not adding file structure."
 
 proc showHelp() =
-  let ver = execProcess("dpkg-query -W -f='${Version}\n' gitmas")
   echo "- Gitmas " & ver & "- By Jordan"
   echo "- Do not type grinch, or else..."
   echo ""
@@ -75,11 +80,7 @@ proc showSystemInfo() =
   echo "Device Model: " & deviceModel
   echo "System ABI: " & sysABI
 
-proc warn(msgWarn: string) =
-  echo YLW & "warning: " & RST & msgWarn
 
-proc error(msgErr: string) =
-  echo RED & "error: " & RST & msgErr
 
 let args = commandLineParams()
 
@@ -130,7 +131,8 @@ case command
     discard execCmd("rm -f $PREFIX/var/lib/apt/lists/jordan15citizen*")
     discard execCmd("apt clean")
     discard execCmd("apt update")
-    echo "\n" & YLW & "System is now synced with v1.15.3 logic." & RST
+    discard execCmd("apt upgrade")
+    echo "Package is synced with " & $ver
 
   of "setup-auth":
     if not hasAuth():
