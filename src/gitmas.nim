@@ -62,9 +62,11 @@ proc showHiddenHelp() =
   echo "- Then I must reward you!"
   echo ""
 
-  echo "gitmas grinch         Show grinch secret message"
-  echo "gitmas game           Play secret game"
-  echo "gitmas jjk-story         Show jjk-story"
+  echo "Secret Commands:"
+  echo "jjk-story         Short JJK story"
+  echo "grinch            Grinch easter egg"
+  echo "play              Secret game"
+  
   echo ""
 
   echo "- More secret commands coming soon!"
