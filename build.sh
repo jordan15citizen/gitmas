@@ -46,6 +46,6 @@ cd ../..
 
 # 6. Deployment
 msg "Pushing to GitHub..."
-gitmas push "$1"
+gitmas push "$VERSION: $1"
 
 msg "${G}$VERSION is Live and Signed!${NC}"

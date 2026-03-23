@@ -9,7 +9,7 @@ randomize()
 
 while true:
   let randNum = rand(1..5)
-  echo "I am thinking of a number between 1 and 10"
+  echo "I am thinking of a number between 1 and 5"
 
   stdout.write "Enter your guess: "
   let guessNum = stdin.readLine().parseInt()
