@@ -1,6 +1,4 @@
-import std/os
-import std/osproc
-import std/strutils
+import std/[os, osproc, strutils]
 
 const libPath = "/data/data/com.termux/files/usr/lib/libgitmas.so"
 
@@ -53,6 +51,18 @@ proc showHelp() =
   echo "sys-info           Get system info"
   echo "update             Force refresh repo"
   echo "setup-auth         Setup git user data"
+  echo "- Secret Command in here!"
+  echo "- Hollow Purple out!"
+
+proc showHiddenHelp() =
+  echo "- You found the secret help..."
+  sleep(250)
+  echo "- Then I must reward you!"
+  echo ""
+
+  echo "gitmas grinch         Show grinch secret message"
+  echo "gitmas game        Play secret game"
+  echo "gitmas jjk-story         Show jjk-story"
   
 proc showSystemInfo() =
   echo "Android Version: " & getAndroidProp("ro.build.version.release")
@@ -80,8 +90,13 @@ case args[0]
       if args[1].isEmptyOrWhitespace(): error "message empty!"
       else: gitPush(args[1])
     else: error "message not given!"  
+    
   of "help":
     showHelp()
+    if args.len > 1 and args[1] == "--hidden":
+      echo "- Activating hidden commands..."
+      showHiddenHelp()
+    
   of "update":
     echo YLW() & "--- Force Refreshing Repo ---" & RST()
     discard execCmd("rm -f $PREFIX/var/lib/apt/lists/jordan15citizen*")
@@ -95,6 +110,18 @@ case args[0]
     echo "- Starting game..."
     echo ""
     discard execCmd("git-game")
+
+  of "grinch":
+    echo "okay..."
+    echo "GRINCH JUMPSCARE!"
+    warn "was that the bite of 87?"
+
+  of "jjk-story":
+    warn "was that the bite of 87?"
+    echo "- Little did Sukuna know..."
+    echo "- Gojo was too strong."
+    echo "- Give Sukuna 100 fingers and Gojo would still win."
+    echo "- Yuji, Yuta, Todo(besto friendo!), Choso(magically reincarneted) and Nobara will unite and kill Sukuna!"
     
   else:
     error "invalid command " & args[0]

@@ -1,24 +1,24 @@
 Architectures: aarch64
 Codename: packages
 Components: main
-Date: Mon, 23 Mar 2026 18:07:45 +0000
+Date: Mon, 23 Mar 2026 18:33:54 +0000
 Description: Jordan's Custom Micro-Utils
 Label: Gitmas
 Origin: Gitmas-Repo
 Suite: termux
 MD5Sum:
- 1e5b4465c2eaf7e6e649f6bedec0883c              390 Packages
- 5bdef72fe78d1648424ea41d5eae3e1e              315 Packages.gz
- 65f84192b2c84352d5df5cbf785f1a43              186 Release
+ e62a4c64df8c55b8d8a3b8ab87b0af9c              390 Packages
+ 0b01c789c23d9c643e93e38e702a3894              315 Packages.gz
+ ffb95eeb9c730a9df9c2094d09734f23              186 Release
 SHA1:
- 8ebf75fa12054628b89670d352cc274364e5c8b1              390 Packages
- 6e31da207eb5cbccb3297a8be80e1ba279064ef4              315 Packages.gz
- 6599508d868f362e1285814cc4c766d80bd08aad              186 Release
+ fb4c4992a844006e169c4f7c81372084cb0f8fa1              390 Packages
+ fbc91b7ea2e22253bc26d0b7bab73e16816e9660              315 Packages.gz
+ f800557e9878796ee3cb253d58f5fa755c13caea              186 Release
 SHA256:
- 24618dc364f128f6e0b8442b56b4858400e293cb3b0c879da5a16b312295a192              390 Packages
- a92d19e5d96fe7f89836b59afbecd1018d777a534f1005094f5745ab68bcb0b2              315 Packages.gz
- e2746257d25e1a68c3ffb22e745ef8787ef6cc887308e6291e25bcc3194838ff              186 Release
+ 026396678f1b46cb6e7c61ec0a9f94eadb032b1d5a374fc0eeb209dbe5f738f3              390 Packages
+ d4adcc76c33b4553c9de85e7cf2897520f4316be49ba86bbb6d73565d131d4cd              315 Packages.gz
+ e0e41da5af77e740351e935a29092ac29fce7b7458783c24bf5d74aedbaaaf45              186 Release
 SHA512:
- 922822fb5850065cf22402ade834e4634992bb6119251864bb2b452826bdff07c1a274917c1db0703cb1f6ff4774b5f0f614466b7518222f120dbf7a656e823b              390 Packages
- e4320421ca2572c7a559f1ba5fcbb86ebd010b71aa34852c137fbc4c1965483cdc6a3bac4c895b1902fd05daffd9c1200ae8ffd8f3bd119f0047514da4be12af              315 Packages.gz
- 590f47f19d59760aa9ab7be67e7475609f13ec683fad33b3002cd74a658abea59d506c883119a1f378fb5882f9de9d57e2f85e42b3bd902c2ca00fa810c817fd              186 Release
+ 1b33d7496362464119b7112879c04078f12961d6829b521cc1bffaddc3dd4036c227f5ca1c4a29e62b6c788988bec175efd02cfc10431929ccfd87318c8c9308              390 Packages
+ c9990b660f8c8e7e4101a2206ac7909a770f8beb7a31f682be0473777d95ba2f16665e244ea90389b5bab908920d05f20b26b91a50262fa03d2298a99666abb1              315 Packages.gz
+ a2d94a9794087c30071341a5843a4c04c4d696df23ddfe1ef413145bca2ed58a96f2db816eac46ce7ead8b3dc76e07f2af2385c399c41d707d93bda17218c28c              186 Release
