@@ -63,7 +63,7 @@ proc showHiddenHelp() =
   echo ""
 
   echo "gitmas grinch         Show grinch secret message"
-  echo "gitmas game        Play secret game"
+  echo "gitmas game           Play secret game"
   echo "gitmas jjk-story         Show jjk-story"
   echo ""
 
