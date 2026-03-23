@@ -51,6 +51,8 @@ proc showHelp() =
   echo "sys-info           Get system info"
   echo "update             Force refresh repo"
   echo "setup-auth         Setup git user data"
+  echo ""
+  
   echo "- Secret Command in here!"
   echo "- Hollow Purple out!"
 
@@ -63,6 +65,9 @@ proc showHiddenHelp() =
   echo "gitmas grinch         Show grinch secret message"
   echo "gitmas game        Play secret game"
   echo "gitmas jjk-story         Show jjk-story"
+  echo ""
+
+  echo "- More secret commands coming soon!"
   
 proc showSystemInfo() =
   echo "Android Version: " & getAndroidProp("ro.build.version.release")
@@ -92,10 +97,11 @@ case args[0]
     else: error "message not given!"  
     
   of "help":
-    showHelp()
     if args.len > 1 and args[1] == "--hidden":
       echo "- Activating hidden commands..."
       showHiddenHelp()
+    else:
+      showHelp()
     
   of "update":
     echo YLW() & "--- Force Refreshing Repo ---" & RST()
@@ -125,3 +131,4 @@ case args[0]
     
   else:
     error "invalid command " & args[0]
+    error "It is okay, just type help!"
