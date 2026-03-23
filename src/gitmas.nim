@@ -114,7 +114,7 @@ case args[0]
     else: 
       echo "Credentials already established."
 
-  of "game":
+  of "play":
     echo "- Starting game..."
     echo ""
     discard execCmd("git-game")
