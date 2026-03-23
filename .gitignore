@@ -7,6 +7,7 @@ nimcache/
 # The actual binaries
 gitmas
 libgitsetup.so
+game
 
 # OS specific
 .DS_Store

@@ -88,6 +88,13 @@ case args[0]
     discard execCmd("apt clean && apt update && apt upgrade")
   of "setup-auth":
     if not hasAuth(): discard doSetup()
-    else: echo "Credentials already established."
+    else: 
+      echo "Credentials already established."
+
+  of "game":
+    echo "- Starting game..."
+    echo ""
+    discard execCmd("git-game")
+    
   else:
     error "invalid command " & args[0]

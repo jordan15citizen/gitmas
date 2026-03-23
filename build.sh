@@ -15,6 +15,10 @@ msg "Compiling Gitmas and Shared Library..."
 nim c -d:release --opt:size -o:src/gitmas src/gitmas.nim
 strip src/gitmas
 
+# New Game Binary
+nim c -d:release --opt:size src/game.nim
+strip src/game
+
 # Build the shared library (The Auth/Sign Brain)
 # We ensure it goes into the lib folder for the manifest to grab
 nim c -d:release --app:lib --out:lib/libgitmas.so lib/gitmaslib.nim
