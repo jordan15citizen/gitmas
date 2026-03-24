@@ -66,6 +66,7 @@ while true:
       
     else:
       echo fmt"{RED}Exiting...{RST}"
+      quit(0)
 
   echo fmt"{BLUE}Money: {money}$"
   echo fmt"{BLUE}Lives: {lives}{RST}"
