@@ -1,4 +1,4 @@
-import std/[os, posix, osproc, json, strformat,  strutils, random, terminal]
+import std/[os, osproc, json, strformat,  strutils, random, terminal]
 
 const BGT = ansiStyleCode(styleBright)
 const RED = BGT & ansiForegroundColorCode(fgRed)
