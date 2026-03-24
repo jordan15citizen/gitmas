@@ -9,7 +9,7 @@ const savePath = "/data/data/com.termux/files/home/.gitmas"
 const saveFile = savePath & "/userdata.json"
 
 var lives = 5
-var money = 100
+var money = 300
 var wins = 0
 var losses = 0
 
@@ -51,12 +51,12 @@ while true:
   if lives == 0:
     echo ""
     echo fmt"{RED}No lives left!{RST}"
-    stdout.write fmt"{BLUE}Spend 100$ to gain 1 life? (Y/n) "
+    stdout.write fmt"{BLUE}Spend 100$ to gain 2 life? (Y/n) "
     let gainLife = stdin.readLine()
     if gainLife.toLowerAscii().contains("y"):
-      echo "Deducting 100$ and giving 1 life..."
+      echo "Deducting 100$ and granting 2 lives..."
       if money >= 100:
-        lives += 1
+        lives += 2
         money -= 100
         saveData(money, lives, losses, wins)
         
