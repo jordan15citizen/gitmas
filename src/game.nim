@@ -8,7 +8,7 @@ const RST = ansiResetCode
 const savePath = "/data/data/com.termux/files/home/.gitmas"
 const saveFile = savePath & "/userdata.json"
 
-var lives = 5
+var lives = 10
 var money = 300
 var wins = 0
 var losses = 0
@@ -51,12 +51,12 @@ while true:
   if lives == 0:
     echo ""
     echo fmt"{RED}No lives left!{RST}"
-    stdout.write fmt"{BLUE}Spend 100$ to gain 2 life? (Y/n) "
+    stdout.write fmt"{BLUE}Spend 100$ to gain 5 lives? (Y/n) {RST}"
     let gainLife = stdin.readLine()
     if gainLife.toLowerAscii().contains("y"):
-      echo "Deducting 100$ and granting 2 lives..."
+      echo "Deducting 100$ and granting 5 lives..."
       if money >= 100:
-        lives += 2
+        lives += 5
         money -= 100
         saveData(money, lives, losses, wins)
         
@@ -83,7 +83,7 @@ while true:
     sleep(100)
     echo fmt"{GRN}Your guess was correct!{RST}"
     
-    money += 25
+    money += 50
     wins += 1
     saveData(money, lives, losses, wins)
     
