@@ -130,7 +130,17 @@ case args[0]
     echo "- Gojo was too strong."
     echo "- Give Sukuna 100 fingers and Gojo would still win."
     echo "- Yuji, Yuta, Todo(besto friendo!), Choso(magically reincarneted) and Nobara will unite and kill Sukuna!"
+
+  of "moo":
+    echo "- :)"
+    let exitCode = execCmd("apt moo")
+    if exitCode != 0:
+      error "How does apt moo fail??"
+      quit(exitCode)
+    else:
+      echo "- APT mooed"
     
   else:
     error "invalid command " & args[0]
     error "It is okay, just type help!"
+    quit(1)
