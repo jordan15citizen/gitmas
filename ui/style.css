@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+h1 {
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: 0.035em 0.035em 0 grey
+}
+hr {
+  border-width: 0.75;
+  border-color: black;
+}
+a {
+  color: blue;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 0.15em solid;
+  border-bottom-color: blue;
+}
+
+p {
+  font-family: 'inter', inter;
+  text-shadow: 0.025em 0.025em 0 grey
+}
+
+h2 {
+  font-family: 'inter', inter;
+  text-shadow: 0.025em 0.025em 0 grey
+  text-weight: 900;
+  text-align: center;
+  color: white;
+  padding: 0.2em;
+  width: 100%;
+  display: inline-block;
+  background-color: black;
+  outline: 0.1em solid white;
+  box-shadow: 5px 5px 0px grey;
+}

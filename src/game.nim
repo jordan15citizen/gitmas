@@ -5,7 +5,7 @@ const RED = BGT & ansiForegroundColorCode(fgRed)
 const BLUE  = BGT & ansiForegroundColorCode(fgBlue)
 const GRN = BGT & ansiForegroundColorCode(fgGreen)
 const RST = ansiResetCode
-const savePath = "/data/data/com.termux/files/home/.gitmas"
+const savePath = "/data/data/com.termux/files/usr/etc/gitmas"
 const saveFile = savePath & "/userdata.json"
 
 var lives = 10
